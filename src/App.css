@@ -1,2 +1,19 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&family=Gluten:wght@100..900&display=swap');
+
 @import "tailwindcss";
+@plugin "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
+
+@theme {
+    /* Colors */
+    --color-electric-blue: #67E9FF;
+    --color-apple-green: #A5BE00;
+    --color-rich-black: #111827;
+    --color-jonquil-yellow: #FACC15;
+
+    /* Fonts */
+    --font-display: "Atma", system-ui;
+    --font-primary: "Gluten", cursive;
+}
 
