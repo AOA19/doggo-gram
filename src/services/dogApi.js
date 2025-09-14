@@ -2,7 +2,7 @@ const url = "https://api.thedogapi.com/v1";
 const apiKey = import.meta.env.VITE_DOG_API_KEY;
 
 export async function getDogImages() {
-    const res = await fetch(`${url}/images/search?limit=9&has_breeds=true`, {
+    const res = await fetch(`${url}/images/search?limit=9&has_breeds=true&mime_types=jpg,png&size=med`, {
         headers: {"x-api-key": apiKey}
     });
 
