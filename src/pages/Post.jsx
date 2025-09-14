@@ -17,7 +17,8 @@ export default function Post() {
                   id: dogImage.id,
                   imageUrl: dogImage.url,
                   name: breedInfo.name,
-                  temperament: breedInfo.temperament
+                  temperament: breedInfo.temperament,
+                  lifeSpan: breedInfo.life_span
                 });
             } catch (error) {
                 console.error("Error fetching dog post:", error)
@@ -29,14 +30,15 @@ export default function Post() {
     if(!dog) return <p>Loading...</p>;
 
     return (
-      <div className="min-h-screen bg-apple-green">
+      <div className="min-h-screen bg-jonquil-yellow px-6 pb-8">
         <NavBar />
-        <h1 className="text-2xl font-primary font-semibold">{dog.name}</h1>
+        <h1 className="text-4xl font-primary font-semibold text-center pb-4 text-rich-black">{dog.name}</h1>
         <div className="flex justify-center">
-          <img src={dog.imageUrl} alt={dog.name} className="w-40 h-40" />
+          <img src={dog.imageUrl} alt={dog.name} className="w-80 h-80 lg:w-160 lg:h-160" />
         </div>
-        <div>
-          <p className="font-primary font-medium">Temperament:{dog.temperament}</p>
+        <div className="lg:text-center lg:pb-16">
+          <p className="font-primary font-medium pt-8 px-6 text-2xl lg:text-3xl text-rich-black">I'm... {dog.temperament}</p>
+          <p className="font-primary font-medium pt-8 px-6 text-2xl lg:text-3xl text-rich-black">I live for {dog.lifeSpan}</p>
         </div>
       </div>
     );
