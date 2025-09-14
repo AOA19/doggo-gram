@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getDogImages } from "../services/dogApi";
 import {Link} from "react-router-dom"
+import NavBar from "../components/NavBar";
 
 export default function Gallery() {
   const [dogImages, setDogImages] = useState([]);
@@ -9,7 +10,7 @@ export default function Gallery() {
     async function fetchDogImages(){
       try {
         const images = await getDogImages();
-        setDogImages(images)
+        setDogImages(images.slice(0,9));
        
       } catch (error) {
         console.error("Error fetching dogs:" , error)
@@ -21,17 +22,17 @@ export default function Gallery() {
   if (!dogImages) return <p>Loading...</p>;
 
   return (
-    <div className="min-h-screen bg-apple-green grid grid-cols-3">
-      {dogImages.map((dog) => (
-      <Link to={`/post/${dog.id}`} key={dog.id}>
-        <div key={dog.id} className="">
-          <img 
-            src={dog.url} 
-            alt="dog"
-            className="h-48" />
-        </div>
-      </Link>
-      ))}
+    <div className="min-h-screen bg-apple-green px-6 pb-8">
+      <NavBar />
+      <div className="grid grid-cols-3 justify-items-center">
+        {dogImages.map((dog) => (
+          <Link to={`/post/${dog.id}`} key={dog.id}>
+            <div className="hover:border-6 hover:border-solid hover:border-electric-blue">
+              <img src={dog.url} alt="dog" className=" w-61 h-62 object-cover" />
+            </div>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }
