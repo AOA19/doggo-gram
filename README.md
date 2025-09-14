@@ -1,7 +1,7 @@
 # DoggoGram
 
 ## Overview 
-DoggoGram is an Instagram-inspired dog photo gallery that utilizes [TheDog API] (https://docs.thedogapi.com/) to fetch and display adorable dog images. Users can browse a gallery of random dogs and click on an image to view more details about that specific pup.
+DoggoGram is an Instagram-inspired dog photo gallery that utilizes [TheDog API](https://docs.thedogapi.com/) to fetch and display adorable dog images. Users can browse a gallery of random dogs and click on an image to view more details about that specific pup.
 
 ## Features
 - Dog Gallery: Fetches a grid of random dog images from the Dog API.
